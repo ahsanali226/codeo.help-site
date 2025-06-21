@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutorials - Help for Coding</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">CodeHelp</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tutorials.html">Tutorials</a></li>
+                <li><a href="ask.html">Ask</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="content">
+        <h1>Learn Coding with Our Tutorials</h1>
+
+        <input type="text" id="searchBox" placeholder="Search tutorials..." class="search-input" />
+
+        <ul class="tutorial-list" id="tutorialList">
+            <li><a href="#">HTML Basics</a></li>
+            <li><a href="#">CSS Styling</a></li>
+            <li><a href="#">JavaScript Essentials</a></li>
+            <li><a href="#">Python for Beginners</a></li>
+            <li><a href="#">React.js Fundamentals</a></li>
+        </ul>
+    </section>
+
+    <script>
+        const searchBox = document.getElementById('searchBox');
+        const listItems = document.querySelectorAll('#tutorialList li');
+
+        searchBox.addEventListener('input', () => {
+            const keyword = searchBox.value.toLowerCase();
+            listItems.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                item.style.display = text.includes(keyword) ? '' : 'none';
+            });
+        });
+    </script>
+
+
+    <footer>
+        <p>&copy; 2025 CodeHelp. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
